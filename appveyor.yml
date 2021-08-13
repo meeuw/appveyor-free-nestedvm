@@ -1,0 +1,10 @@
+---
+image: ubuntu
+install:
+  - sudo wget https://download.virtualbox.org/virtualbox/6.1.26/virtualbox-6.1_6.1.26-145957~Ubuntu~bionic_amd64.deb
+  - sudo dpkg -i virtualbox-6.1_6.1.26-145957~Ubuntu~bionic_amd64.deb
+  - sudo wget https://releases.hashicorp.com/vagrant/2.2.18/vagrant_2.2.18_x86_64.deb
+  - sudo dpkg -i vagrant_2.2.18_x86_64.deb
+build_script:
+  - vagrant up
+  - vagrant ssh -- /usr/sbin/getenforce
